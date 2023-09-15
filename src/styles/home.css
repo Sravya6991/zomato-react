@@ -1,0 +1,165 @@
+:root {
+    --pure-white: #FFFFFF;
+    --white-1: #FBFBFB;
+    --white-2: #9D0E0E00;
+    --blue: #192F60;
+    --grey-1: #8C96AB;
+    --grey-2: #636F88;
+    --grey-3: #74819E;
+    --dark-grey: #707070;
+    --dark-brown: #4F0707;
+    --red: #EB2929;
+    --beige: #00000029;
+}
+
+body, nav, .header, h4 {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    height: 480px;
+    background-image: linear-gradient(180deg, #9D0E0E00 20%, #4F0707 100%), url(../Images/shutterstock_348320018.png);
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+nav {
+    height: 3em;
+}
+
+.navbar-nav button {
+    margin: 20px 50px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    color: var(--pure-white);
+    font-weight: 600;
+    font-size: 18px;  
+}
+
+
+.register, .logo {
+    color: var(--pure-white);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 5px 15px;
+}
+
+.register {
+    border: 1px solid var(--pure-white);
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+.register:hover {
+    cursor: pointer;
+    background-color: var(--blue);
+}
+
+.login:hover {
+    color: var(--blue);
+    cursor: pointer;
+}
+
+#logo {
+    border: .2px solid var(--grey-1);
+    top: 95px;
+    left: 45%;
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    background-color: var(--pure-white);  
+    color: red;
+    padding: 10px 0;
+    font-size: 70px;
+    font-weight: 600;;
+}
+
+.h1 {
+    top: 250px;
+    left: 25%;
+    max-width: 758px;
+    max-height: 51px;
+    color: var(--pure-white);
+    font-size: 36px;
+    font-weight: 600;
+}
+
+#hero-select {
+    top: 320px;
+    left: 25%;
+    width: 55%;
+}
+
+#hero-select input, .form-select {
+    font-size: 15px;
+    font-family: 'Poppins';
+    color: var(--grey-2);
+}
+
+section h2 {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 48px 113px 0;
+    color: var(--blue);
+}
+
+section p {
+    margin: 10px 113px;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--grey-1);
+}
+
+.menu-container a {
+    text-decoration: none;
+}
+
+.card {
+    width: 360px;
+    height: 160px;
+    margin: 0px auto;
+    box-shadow: 0px 3px 6px var(--beige);
+}
+
+.card img {
+    height: -webkit-fill-available;
+    object-fit: cover;
+}
+
+.card-title {
+    color: var(--blue);
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.card-text {
+    padding-left: 20px;
+    color: var(--grey-1);
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#login h4, #acctbtn h4 {
+    font-size: 24px;
+    color: #192F60;
+    font-weight: bold;
+}
+
+.modal-content.userInfo {
+    width: 40em;
+    height: 35em;
+}
+
+.modal-content.userReg {
+    width: 40em;
+    height: 50em;
+}
