@@ -3,62 +3,59 @@ import "../../styles/cuisine.css";
 
 const FilterDisplay = (props) => {
     const rests = props.restaurants;
-    
-    if(rests) {
-        if(rests.length > 0) {
+
+    if (rests) {
+        if (rests.length > 0) {
             return (
                 <>
                     {rests.map((item) => (
-                    <Link to={`/details/${item.restaurant_id}`} style={{textDecoration: "none"}}>
-                    <div class="card rests mb-4" key={item._id}>
-                        <div class="row mx-auto justify-content-start">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <div class="text-center card-content">
-                                            <img
-                                                class="rounded-5 mt-3"
-                                                src={item.restaurant_thumb}
-                                                alt={item.restaurant_name}
-                                                width="160px"
-                                                height="140px"
-                                                style={{objectFit: "cover"}}
-                                            />
+                        <Link to={`/details/${item.restaurant_id}`} key={item._id} style={{ textDecoration: "none" }}>
+                            <div className="card rests mb-4">
+                                <div className="row w-100 mx-auto justify-content-start">
+                                    <div className="col-12">
+                                        <div className="row justify-content-around" id='card-content'>
+                                            <div className="col-3" >
+                                                <img
+                                                    className="rounded-5 mt-3"
+                                                    src={item.restaurant_thumb}
+                                                    alt={item.restaurant_name}
+                                                    width="160px"
+                                                    height="140px"
+                                                    style={{ objectFit: "cover" }}
+                                                />
+                                            </div>
+                                            <div className="col-8">
+                                                <h1 className="h1 fw-bold ms-1 mt-4">
+                                                    {item.restaurant_name}
+                                                </h1>
+                                                <h5 className="ms-1 p-1">
+                                                    {item.address}
+                                                </h5>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-8 card-content">
-                                        <h1 class="h1 card-content-h1 fw-bold ms-1 mt-4">
-                                            {item.restaurant_name}
-                                        </h1>
-                                        {/* <h5 class="fw-semibold ms-1">FORT</h5> */}
-                                        <p class="m-1 p-1">
-                                            {item.address}
-                                        </p>
+                                    <hr className="hr" />
+                                    <div className="col-12 cuisine-details mt-2">
+                                        <table className="table table-borderless mx-lg-4">
+                                            <tbody>
+                                                <tr>
+                                                    <td key="cuisine" className="heading">CUISINES:</td>
+                                                    {item.cuisines.map((cus) => (
+                                                        <td key={cus.cuisine_name} className="fw-semibold cuisine-body">{cus.cuisine_name}</td>
+                                                    ))}
+                                                </tr>
+                                                <tr>
+                                                    <td key="cost" className="heading">COST FOR TWO</td>
+                                                    <td key={item.cost} className="fw-semibold cuisine-body">
+                                                        <span>&#8377;</span>{item.cost}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
-                            <hr class="hr" />
-                            <div class="col-12 mt-2 w-75">
-                                <table class="table table-borderless mx-4">
-                                    <tbody>
-                                        <tr>
-                                        <td class="heading">CUISINES:</td>
-                                        {item.cuisines.map((cus) => (
-                                            <td class="fw-semibold cuisine-body">{cus.cuisine_name}</td>
-                                        ))} 
-                                        </tr>
-                                        <tr>
-                                        <td class="heading">COST FOR TWO</td>
-                                        <td class="fw-semibold cuisine-body">
-                                            <span>&#8377;</span>{item.cost}
-                                        </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>    
-                    </div>
-                    </Link>
+                        </Link>
                     ))}
                 </>
             )
@@ -70,7 +67,7 @@ const FilterDisplay = (props) => {
             )
         }
     }
-  
+
 };
 
 export default FilterDisplay;

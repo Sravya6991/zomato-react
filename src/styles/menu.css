@@ -30,7 +30,8 @@
     border-radius: 50%;
 }
 
-.circle .nveg {
+.nveg {
+    border-color: red;
     width: 8px;
     height: 8px;
     transform: translate(50%, 50%);
@@ -41,6 +42,7 @@
 .order-img {
     width: 6em;
     height: 6em;
+    padding: 0;
     background-color: var(--blue);
     position: relative;
 }
@@ -113,4 +115,49 @@
 .modal-body .form-control {
     font-size: 16px;
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+     .modal {
+        --bs-modal-width: 100%
+    }
+    
+    .modal-content {
+        width: 100%;
+    }
+    .modal-title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .menu-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    .order-content {
+        width: 70%;
+    }
+    .order-content h4 {
+        font-size: 16px;
+    }
+    .order-content h5 {
+        font-size: 14px;
+    }
+    .order-content p {
+        font-size: 13px;
+    }
+    .order-img {
+        width: 30%;
+    }
+    .add {
+        width: 20px;
+        text-align: center;
+    }
+    .subtotal {
+        font-size: 18px;
+    }
+ 
 }

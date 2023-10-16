@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import Header from '../Header';
+import HeaderRes from '../Restaurants/HeaderRes';
 import axios from 'axios'
 import DisplayOrder from './DisplayOrder';
 
@@ -11,19 +11,17 @@ const ViewOrder = () => {
     let userInfo = sessionStorage.getItem("userInfo");
     let data = JSON.parse(userInfo);
 
-    console.log(data)
-
     useEffect(() => {
         axios.get(`${ourl}?email=${data.email}`, {method: 'GET'})
         .then((res)=> {
             console.log(res.data)
             setOrders(res.data)
         })
-    }, [])
+    }, [orders])
 
   return (
     <div>
-        <Header />
+        <HeaderRes />
         <DisplayOrder orderData={orders}/>
     </div>
   )

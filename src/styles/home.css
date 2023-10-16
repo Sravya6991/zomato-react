@@ -55,11 +55,13 @@ nav {
     border: 1px solid var(--pure-white);
     border-radius: 3px;
     background-color: transparent;
+    font-weight: 700;
 }
 
 .register:hover {
     cursor: pointer;
     background-color: var(--blue);
+    color: white;
 }
 
 .login:hover {
@@ -97,10 +99,19 @@ nav {
     width: 55%;
 }
 
-#hero-select input, .form-select {
+.form-select {
     font-size: 15px;
     font-family: 'Poppins';
     color: var(--grey-2);
+    position: relative;
+}
+
+.form-select option {
+    width: 100%;
+}
+.form-select option:hover {
+    background-color: #192F60;
+    cursor: pointer;
 }
 
 section h2 {
@@ -148,18 +159,58 @@ section p {
     font-family: 'Poppins', sans-serif;
 }
 
-#login h4, #acctbtn h4 {
-    font-size: 24px;
-    color: #192F60;
+#login, #acctbtn {
+    font-size: 18px;
+    background-color: #192F60;
     font-weight: bold;
+    margin-right: 10px;
 }
 
-.modal-content.userInfo {
-    width: 40em;
-    height: 35em;
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(140, 150, 171, 0.5);
 }
 
-.modal-content.userReg {
-    width: 40em;
-    height: 50em;
+.loginPage {
+    height: 100vh;
+}
+
+@media screen and (max-width: 800px) {
+    #logo {
+        font-size: 40px;
+        width: 80px;
+        height: 80px;
+    }
+    .h1 {
+        top: 200px;
+        left: 10%;
+        font-size: 20px;
+    }
+    #hero-select {
+        width: 75%;
+        margin: 0 auto;
+        left: 10%;
+    }
+    section h2 {
+        font-size: 18px;
+        margin: 20px;
+    }
+    
+    section p {
+        margin: 5px 20px;
+        font-size: 16px;
+    }
+
+    .auth-login {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #login, #acctbtn {
+        font-size: 16px;
+    }
+    
+    
 }

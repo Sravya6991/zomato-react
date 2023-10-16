@@ -5,7 +5,7 @@ import "../../styles/home.css";
 const QuickDisplay = (props) => {
     const listMeal = ({mealData}) => {
         if(mealData) {
-            return mealData.map((item) => {
+            return mealData.map(item => {
                 return (
                     <Link className="col-12 col-md-3 card p-0" key={item._id} to={`/restaurants/${item.mealtype_id}`}>
                         <div className="row g-0" style={{ height: "100%" }}>

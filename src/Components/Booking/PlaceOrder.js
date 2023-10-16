@@ -1,34 +1,33 @@
 import React  from "react";
 import { Link } from "react-router-dom";
-import Header from "../Header";
-import "../../styles/details.css";
 import PlaceOrderAuth from "./PlaceOrderAuth";
-
+import HeaderRes from "../Restaurants/HeaderRes";
+import "../../styles/cuisine.css";
 
 const PlaceOrder = (props) => {
     const renderOrder = (props) => {
         const userInfo = sessionStorage.getItem("userInfo");
-        if(userInfo === "") {
+        if(userInfo === null || undefined) {
             return(
             <>
-                <Header />
+                <HeaderRes />
                 <div className="container">
-                <p>
-                    Please Login to place order! If not already login, click 'Signup'
-                    and login :){" "}
-                </p>
-                <Link to="/login">
-                    Login
-                </Link>
+                    <p className="w-sm-50 p-3">
+                        Please Login to place order! If not already login, click 'Signup'
+                        and login {":)"}
+                    </p>
+                    <Link to="/login">
+                        Login
+                    </Link>
                 </div>
             </>
             )
         } else {
            let data = JSON.parse(userInfo);
-            console.log(data);
+            // console.log(data);
             const rest_name = props.match.params.restName;
             return(
-            <PlaceOrderAuth orderData={data} restName={rest_name} history={props.history}/>
+                <PlaceOrderAuth orderData={data} restName={rest_name} history={props.history}/>
             )
         }
     }

@@ -1,25 +1,37 @@
 import React from 'react'
 
 export const ImageGallery = ({images}) => {
-    let imagesData = []
+    // let imagesData = []
+    // const active_image = ({images}) => {
+    //     let j= 0;
+    //     while(images) {
+    //         imagesData.push(
+    //             <div className="carousel-item active">
+    //                 <img src={images[j]} className="d-block w-100" alt="im" />
+    //             </div>
+    //         )
+    //         break
+    //     }
+    // }
+
     const active_image = ({images}) => {
-        
-        console.log(images)
-        let j= 0;
-        while(images) {
-            imagesData.push(
+        for(let i=0; i<images.length; i++) {
+            if(i===0) {
+                carousal(images[i])
+                break;  
+            }
+        }
+        function carousal(image) {
+            return (
                 <div className="carousel-item active">
-                    <img src={images[j]} className="d-block w-100" alt="im" />
+                    <img src={image} className="d-block w-100" alt="im" />
                 </div>
-            )
-            break
+            )      
         }
     }
 
     const image_gallery = ({images}) => {
-        // let imagesData = []
-        console.log(images)
-        
+        let imagesData = []        
         for(let i=1; i<=images.length; i++) {
             imagesData.push(
                 <div className="carousel-item">
@@ -27,7 +39,6 @@ export const ImageGallery = ({images}) => {
                 </div>
             )
         }
-        console.log(imagesData)
         return imagesData    
     }
 

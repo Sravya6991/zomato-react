@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import Header from "../Header";
+import {Link} from 'react-router-dom';
+import HeaderRes from "../Restaurants/HeaderRes";
+import "../../styles/home.css";
+import "../../styles/cuisine.css";
 
 const url = "http://localhost:5000/auth/login";
 
@@ -31,7 +34,8 @@ class Login extends Component {
       console.log(data);
       if (data.auth === true) {
         sessionStorage.setItem("tk", data.token);
-        this.props.history.push("/");
+        const restId = sessionStorage.getItem("restId");
+        this.props.history.push(`/details/${restId}`);
       } else {
         this.setState({ message: data.token });
       }
@@ -40,11 +44,11 @@ class Login extends Component {
 
   render() {
     return (
-      <>
-        <Header />
-        <div className="d-flex flex-column w-75 mx-auto">
+      <div className="loginPage position-relative">
+        <HeaderRes />
+        <div className="container userlogin mx-auto">
           <h2 style={{ color: "red" }}>{this.state.message}</h2>
-          <div className="form-group">
+          <div className="form-group mb-4">
             <label className="form-label" htmlFor="email">
               Email:
             </label>
@@ -56,7 +60,7 @@ class Login extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group mb-4">
             <label className="form-label" htmlFor="password">
               Password:
             </label>
@@ -69,39 +73,33 @@ class Login extends Component {
             />
           </div>
           <button
-            className="btn text-light bg-success"
+            type="button"
+            className="btn text-light bg-success w-25 mx-auto"
             onClick={this.handleSubmit}
-            style={{ width: "50%", margin: "10px auto" }}
           >
             Login
           </button>
-        </div>
-        <hr />
-        <button className="btn btn-outline-secondary mb-3">
-          <i
-            className="fa-regular fa-envelope"
-            style={{ color: "#de1231" }}
-          ></i>
-          &nbsp; Continue with gmail
-        </button>
-        <button className="btn btn-outline-secondary">
-          <i className="fa-brands fa-facebook" style={{ color: "#18428c" }}></i>
-          &nbsp; Continue with facebook
-        </button>
-
-        <div className="modal-footer mx-auto my-4">
-          <p>
-            Already had an account?
-            <button
-              className="btn text-danger"
-              data-bs-toggle="modal"
-              data-bs-target="#login"
-            >
-              Login
+          <hr />
+          <div className="d-flex flex-column w-50 mb-4 mx-auto">
+            <button className="btn btn-outline-secondary mb-3">
+              <i
+                className="fa-regular fa-envelope"
+                style={{ color: "#de1231" }}
+              ></i>
+              &nbsp; Continue with gmail
             </button>
-          </p>
+            <button className="btn btn-outline-secondary">
+              <i className="fa-brands fa-facebook" style={{ color: "#18428c" }}></i>
+              &nbsp; Continue with facebook
+            </button>
+          </div>
+          <p className="text-center">Not a user? Please <Link to="/register">Signup</Link></p>
         </div>
-      </>
+        
+        <div className="footer text-center">
+          <p className="p-2 text-center">Copyrights &copy; 2023</p>
+        </div>
+      </div>
     );
   }
 }

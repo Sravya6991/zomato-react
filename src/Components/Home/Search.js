@@ -1,14 +1,16 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 const lurl = "http://localhost:8000/locations";
 const rurl = "http://localhost:8000/restaurants?state_id=";
 
-export default class Search extends Component {
-    constructor() {
-        super();
+class Search extends Component {
+    constructor(props) {
+        super(props);
         this.state = {
             locations: "",
-            restaurants: ""
+            restaurants: "",
+            // mealTypes: ''
         }
     }
 
@@ -17,7 +19,7 @@ export default class Search extends Component {
         return data.map((item) => {
           return (
             <option key={item._id} value={item.state_id}>
-              {item.location_name},{item.state}
+              {item.location_name}, {item.state}
             </option>
           )
         });
@@ -45,6 +47,12 @@ export default class Search extends Component {
         })
     }
 
+    handleMealTypes = (e) => {
+      // this.props.parentHandleMeals(e.target.value)
+      let restId = e.target.value;
+      this.props.history.push(`/details/${restId}`);
+    }
+
   render() {
     return (
       <div className={"row position-absolute mx-auto"} id="hero-select">
@@ -63,7 +71,7 @@ export default class Search extends Component {
                 style={{ color: "#9e9e9e" }}
               ></i>
             </span>
-            <select className="form-select p-2">
+            <select className="form-select p-2" onChange={this.handleMealTypes}>
               <option>Please select restaurants</option>
               {this.renderRestaurants(this.state.restaurants)}
             </select>
@@ -79,7 +87,8 @@ export default class Search extends Component {
         .then(response => response.json())
         .then((data) => {
             this.setState({locations: data});
-            // console.log(data);
         })
   }
 }
+
+export default withRouter(Search);

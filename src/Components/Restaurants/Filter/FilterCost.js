@@ -12,22 +12,19 @@ export default class FilterCost extends Component {
     let costUrl;
     sessionStorage.setItem("lcost", lcost)
     sessionStorage.setItem("hcost", hcost)
-
     let cuisineId = sessionStorage.getItem("cuisineId");
+
     if(event.target.value === '') {
       costUrl = `${url}${mealId}`
     } 
-    else if(lcost && hcost){
+    if(mealId && lcost && hcost){
       costUrl = `${url}${mealId}?lcost=${lcost}&&hcost=${hcost}`
-      console.log(costUrl)
     } 
-    else if(cuisineId && lcost && hcost) {
+    if(mealId && cuisineId && lcost && hcost) {
       costUrl = `${url}${mealId}?cuisineId=${cuisineId}&&lcost=${lcost}&&hcost=${hcost}`
-      console.log(costUrl)
     } 
     
     axios.get(costUrl).then((res) => {
-      //console.log(res.data)
       this.props.restPerCost(res.data)
     })
   }
@@ -45,7 +42,7 @@ export default class FilterCost extends Component {
               name="cost"
               value="1-500"
             />
-            <label for="lt500" className="form-check-label">
+            <label htmlFor="lt500" className="form-check-label">
               Less than 500
             </label>
           </div>
@@ -57,7 +54,7 @@ export default class FilterCost extends Component {
               name="cost"
               value="500-1000"
             />
-            <label for="5to1k" className="form-check-label">
+            <label htmlFor="5to1k" className="form-check-label">
               500 to 1000
             </label>
           </div>
@@ -69,7 +66,7 @@ export default class FilterCost extends Component {
               name="cost"
               value="1000-1500"
             />
-            <label for="1kto15" className="form-check-label">
+            <label htmlFor="1kto15" className="form-check-label">
               1000 to 1500
             </label>
           </div>
@@ -81,7 +78,7 @@ export default class FilterCost extends Component {
               name="cost"
               value="1500-2000"
             />
-            <label for="15to2k" className="form-check-label">
+            <label htmlFor="15to2k" className="form-check-label">
               1500 to 2000
             </label>
           </div>
@@ -93,7 +90,7 @@ export default class FilterCost extends Component {
               name="cost"
               value="2000-3000"
             />
-            <label for="abv2k" className="form-check-label">
+            <label htmlFor="abv2k" className="form-check-label">
               2000+
             </label>
           </div>

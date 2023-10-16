@@ -45,7 +45,7 @@ header {
 .login {
     color: var(--pure-white);
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .acctbtn {
@@ -70,7 +70,6 @@ header {
 }
 
 .cuisine-h1 {
-    font-size: 3em;
     font-weight: bold;
     color: var(--blue);
     /* margin: 20px auto; */
@@ -79,24 +78,16 @@ header {
     padding: 0; 
 }
 
-.filter-section {
+#collapse-filter {
     border: 1px solid var(--pure-white);
     box-shadow: 0px 3px 6px var(--shadow);
-    width: 30%;
+    width: 35%;
 }
 
 .content-section {
     margin-left: 45px;
     width: 65%;
 }
-
-/* .content-section article {
-    border: 1px solid var(--pure-white);
-    box-shadow: 0px 3px 6px var(--shadow);
-    width: 794px;
-    height: 291px;
-    margin-bottom: 34px;
-} */
 
 .filter-section h2 {
     margin: 17px auto 0 26px;
@@ -148,17 +139,18 @@ input[type="checkbox"], input[type="radio"] {
     height: auto;
 }
 
-.card-content-h1 {
+#card-content h1 {
     font-size: 28px;
     color: var(--blue);
 }
 
-.card-content h5{
+#card-content h5 {
     color: var(--blue);
+    font-weight: 500;
 }
 
-.card-content p {
-    color: var(--grey-2);
+.cuisine-details {
+    width: 75%;
 }
 
 table .heading {
@@ -187,15 +179,19 @@ table .cuisine-body {
     margin: 0px auto;
 }
 
-.pagination button {
+.page-item {
+    background-color: transparent;
     border: 1px solid var(--grey-1);
     color: var(--grey-1);
     width: 36px;
     height: 36px;
+    margin-right: 5px;
+    padding: 0;
+    text-align: center;
     font-size: 20px;
 }
 
-.pagination button:hover {
+.page-item:hover {
     cursor: pointer;
     background-color: var(--grey-1);
     color: var(--pure-white);
@@ -218,4 +214,73 @@ table .cuisine-body {
     background-color: var(--blue);
     color: var(--pure-white);
     cursor: pointer;
+}
+
+.userlogin{
+    width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+    .auth {
+        background-color: #ce0505;
+        height: 10em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+        z-index: 2;
+    }
+    .cuisine-h1 {
+        margin: 10px;
+        padding: 5px;
+        width: 100%;
+        font-size: 22px;
+    }
+
+    #collapse-filter {
+        width: 100%;
+    }
+
+    .content-section {
+        width: 100%;
+    }
+
+    #card-content img {
+        width: 80px;
+        height: 80px;
+    }
+    #card-content h1 {
+        font-size: 18px;
+    }
+    #card-content h5 {
+        font-size: 14px;
+    }
+    .hr {
+        width: 90%;
+        margin: 10px;
+    }
+    .cuisine-details {
+        width: 100%;
+        margin: 10px;
+        padding: 0;
+    }
+
+    .table {
+        width: 90%;
+        margin: 0;
+    }
+
+    table .heading {
+        font-size: 14px;
+        width: 100px;
+    }
+
+    table .cuisine-body {
+        font-size: 14px;
+    }
+    .userlogin {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
