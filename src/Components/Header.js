@@ -8,14 +8,14 @@ export default class Header extends Component {
     constructor(props){
         super(props)
         this.state = {
-            userData: ''
+            userData: '',
         }
     }
-
+    
     handleLogout = () => {
         sessionStorage.clear()        
         this.setState({userData: ""})
-        this.props.history.push("/");
+        window.location.replace('/')
     }
 
     conditionalHeader = () => {
