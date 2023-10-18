@@ -17,7 +17,7 @@ const ViewOrder = () => {
             console.log(res.data)
             setOrders(res.data)
         })
-    }, [orders])
+    },[])
 
   return (
     <div>

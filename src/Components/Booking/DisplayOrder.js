@@ -8,6 +8,7 @@ const DisplayOrder = (props) => {
                     return(
                         <tr key={item._id} >
                             <td>{item.id}</td>
+                            <td>{item.date}</td>
                             <td>{item.rest_name}</td>
                             <td>{item.name}</td>
                             <td>{item.email}</td>
@@ -38,6 +39,7 @@ const DisplayOrder = (props) => {
                 <thead>
                     <tr>
                         <th>OrderId</th>
+                        <th>Order Date</th>
                         <th>Restaurant Name</th>
                         <th>Name</th>
                         <th>Email</th>

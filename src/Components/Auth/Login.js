@@ -35,7 +35,11 @@ class Login extends Component {
       if (data.auth === true) {
         sessionStorage.setItem("tk", data.token);
         const restId = sessionStorage.getItem("restId");
-        this.props.history.push(`/details/${restId}`);
+        if(restId) {
+          this.props.history.push(`/details/${restId}`);
+        } else {
+          this.props.history.push('/');
+        }
       } else {
         this.setState({ message: data.token });
       }

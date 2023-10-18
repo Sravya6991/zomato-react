@@ -85,13 +85,13 @@ export default class Details extends Component {
   }
 
   render() {
-    let { details } = this.state;
+   
     return (
       <div>
         <HeaderRes />
 
         <section className="container-fluid img-gallery position-relative">
-          <img src={details.restaurant_thumb} alt={details.restaurant_name} width="100%" />
+          <img src={this.state.details.restaurant_thumb} alt={this.state.details.restaurant_name} width="100%" />
           <button
             type="button"
             className="btn gallery-btn"
@@ -103,19 +103,19 @@ export default class Details extends Component {
         </section>
 
         {/* <!-- modal image gallery trigger --> */}
-        {{ details } && <ImageGallery images={details.image_gallery} />}
+        {this.state.details && <ImageGallery images={this.state.details.image_gallery} />}
 
         <section className="container main-section mt-5">
           <h1 className="h1 text-start" id="res-title">
-            {details.restaurant_name}
+            {this.state.details.restaurant_name}
           </h1>
           <div className="d-flex text-center">
             <div className="menu-wrapper">
-              <TabData details={details} />
+              <TabData details={this.state.details} />
 
               {/* <!-- Modal button --> */}
               <Link
-                to={`/menu/${details.restaurant_id}`}
+                to={`/menu/${this.state.details.restaurant_id}`}
                 type="button"
                 className="btn"
                 data-bs-toggle="modal"
@@ -137,7 +137,7 @@ export default class Details extends Component {
             <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h1 className="modal-title">{details.restaurant_name}</h1>
+                  <h1 className="modal-title">{this.state.details.restaurant_name}</h1>
                   <button
                     type="button"
                     className="btn-close"
