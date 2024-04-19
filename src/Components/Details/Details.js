@@ -7,7 +7,6 @@ import "../../styles/details.css";
 import "../../styles/menu.css";
 
 import HeaderRes from "../Restaurants/HeaderRes";
-import { ImageGallery } from "./ImageGallery";
 import MenuList from "./Menus/MenuList";
 import TabData from "./TabData";
 import ModalMenu from "./ModalMenu";
@@ -95,15 +94,13 @@ export default class Details extends Component {
           <button
             type="button"
             className="btn gallery-btn"
-            data-bs-target="#image-gallery"
-            data-bs-toggle="modal"
           >
             Click to see Image Gallery
           </button>
         </section>
 
         {/* <!-- modal image gallery trigger --> */}
-        {this.state.details && <ImageGallery images={this.state.details.image_gallery} />}
+        {/* {this.state.details && <ImageGallery images={this.state.details.image_gallery} />} */}
 
         <section className="container main-section mt-5">
           <h1 className="h1 text-start" id="res-title">
