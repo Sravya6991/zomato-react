@@ -53,7 +53,7 @@ nav {
 
 .register {
     border: 1px solid var(--pure-white);
-    border-radius: 3px;
+    border-radius: 10px;
     background-color: transparent;
     font-weight: 700;
 }

@@ -12,9 +12,9 @@ import MenuList from "./Menus/MenuList";
 import TabData from "./TabData";
 import ModalMenu from "./ModalMenu";
 
-const durl = "http://localhost:8000/details/";
-const menuUrl = "http://localhost:8000/menu/";
-const url = "http://localhost:8000/menuitems";
+const durl = "https://restaurant-apis.onrender.com/details/";
+const menuUrl = "https://restaurant-apis.onrender.com/menu/";
+const url = "https://restaurant-apis.onrender.com/menuitems";
 
 export default class Details extends Component {
   constructor() {

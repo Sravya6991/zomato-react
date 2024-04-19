@@ -3,7 +3,7 @@ import HeaderRes from "../Restaurants/HeaderRes";
 import {Link} from 'react-router-dom';
 import "../../styles/cuisine.css";
 
-const url = "http://localhost:5000/auth/register";
+const url = "https://login-api-9e52.onrender.com/auth/register";
 
 export default class Signup extends Component {
   constructor(props) {

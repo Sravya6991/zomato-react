@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
-const url = "http://localhost:8000/restaurants/"
+const url = "https://restaurant-apis.onrender.com/restaurants/"
 
 export default class FilterCost extends Component {
   filterCost = (event) => {

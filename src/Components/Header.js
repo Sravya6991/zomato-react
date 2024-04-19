@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 // import "../styles/home.css"
 
-const url = "http://localhost:5000/auth/userInfo";
+const url = "https://login-api-9e52.onrender.com/auth/userInfo";
 
 export default class Header extends Component {
     constructor(props){
@@ -24,11 +24,11 @@ export default class Header extends Component {
             sessionStorage.setItem("loginStatus", "loggedIn")
             sessionStorage.setItem("userInfo", JSON.stringify(data))
             return (
-                <div className='auth d-flex justify-content-end'>
-                    <Link to={"/"} className="btn login mt-3">
-                        <span>Hi {data.name}</span>
+                <div className='auth d-flex align-items-center justify-content-end'>
+                    <Link to={"/"} className="login text-decoration-none mt-3">
+                        <span>{data.name}</span>
                     </Link>
-                    <button onClick={this.handleLogout} className="btn text-light bg-danger register p-2 mt-3" style={{width: '50%', margin: '10px auto' }}>
+                    <button onClick={this.handleLogout} className="btn text-light bg-danger register p-2 mt-3" style={{width: '100px', margin: '10px 20px' }}>
                         Logout
                     </button>
                 </div>

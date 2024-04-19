@@ -4,7 +4,7 @@ import HeaderRes from "../Restaurants/HeaderRes";
 import "../../styles/home.css";
 import "../../styles/cuisine.css";
 
-const url = "http://localhost:5000/auth/login";
+const url = "https://login-api-9e52.onrender.com/auth/login";
 
 class Login extends Component {
   constructor(props) {

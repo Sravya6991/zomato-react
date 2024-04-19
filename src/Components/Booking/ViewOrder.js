@@ -3,7 +3,7 @@ import HeaderRes from '../Restaurants/HeaderRes';
 import axios from 'axios'
 import DisplayOrder from './DisplayOrder';
 
-const ourl = "http://localhost:8000/order";
+const ourl = "https://restaurant-apis.onrender.com/order";
 
 const ViewOrder = () => {
     const [orders, setOrders] = useState()

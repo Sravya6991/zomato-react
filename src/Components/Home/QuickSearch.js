@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import QuickDisplay from "./QuickDisplay";
 
-const qurl = "http://localhost:8000/quicksearch";
+const qurl = "https://restaurant-apis.onrender.com/quicksearch";
 
 export class QuickSearch extends Component {
   constructor(props) {

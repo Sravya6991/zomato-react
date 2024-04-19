@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-const lurl = "http://localhost:8000/locations";
-const rurl = "http://localhost:8000/restaurants?state_id=";
+const lurl = "https://restaurant-apis.onrender.com/locations";
+const rurl = "https://restaurant-apis.onrender.com/restaurants?state_id=";
 
 class Search extends Component {
     constructor(props) {

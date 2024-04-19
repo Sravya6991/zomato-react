@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 
-const url = "http://localhost:8000/restaurants/";
+const url = "https://restaurant-apis.onrender.com/restaurants/";
 
-const Paginations = (props) => {
+const Paginations = ({rests, restPerPage}) => {
     const [pageNo, setPageNo] = useState(1);
     const [totalCards, setTotalCards] = useState("");
 
@@ -16,16 +16,14 @@ const Paginations = (props) => {
     const startIndex = itemsPerPage*currPage - itemsPerPage;
     const lastIndex = itemsPerPage*currPage;
 
-    console.log("cur-page: ", currPage);
-
     useEffect(()=> {
-        axios.get(`${url}${mealId}?page=${currPage}`)
-            .then((res)=>{
-                console.log(res.data)
-                setTotalCards(res.data.length);
+        axios.get(`${url}${mealId}?page=${currPage}`)     
+            .then(res => {
+                setTotalCards(res.data.length)
                 const result = res.data.slice(startIndex, lastIndex);
-                return props.restPerPage(result)
-            });
+                return restPerPage(result)
+            })
+            // eslint-disable-next-line
     },[pageNo]);
 
     const getPages = () => {
@@ -51,7 +49,7 @@ const Paginations = (props) => {
         axios.get(`${url}${mealId}?page=${currPage}`)
             .then((res)=>{
                 const result = res.data.slice(startIndex, lastIndex);
-                return props.restPerPage(result)
+                return restPerPage(result)
             }
         );
       }

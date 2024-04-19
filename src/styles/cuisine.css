@@ -25,14 +25,12 @@ header {
     text-align: center;
 }
 
+
 #res-logo {
     width: 52px;
     height: 52px;
     border-radius: 50%;
     background-color: var(--pure-white);
-    position: absolute;
-    top: 15px;
-    left: 2em;
     font-size: 33px;
     color: var(--orange);
     font-weight: 600;

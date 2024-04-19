@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import HeaderRes from "../Restaurants/HeaderRes";
 
-const purl = "http://localhost:8000/placeorders";
+const purl = "https://restaurant-apis.onrender.com/placeorders";
 
 const PlaceOrderAuth = (props) => {
     const {orderData, restName, history} = props

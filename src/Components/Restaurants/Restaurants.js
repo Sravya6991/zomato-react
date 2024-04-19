@@ -11,7 +11,7 @@ import Paginations from './Paginations';
 
 import "../../styles/cuisine.css";
 
-const resturl = "http://localhost:8000/restaurants/";
+const resturl = "https://restaurant-apis.onrender.com/restaurants/";
 
 export default class Restaurants extends Component {
   constructor() {

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-const lurl = "http://localhost:8000/restaurants/";
+const lurl = "https://restaurant-apis.onrender.com/restaurants/";
 let mealId = sessionStorage.getItem("mealId")
 
 const FilterLocation = ({rests, restPerLocation}) => {
