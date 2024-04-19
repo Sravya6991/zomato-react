@@ -43,7 +43,7 @@ const CheckoutForm = ({items}) => {
         const { error } = await stripe.confirmPayment({
             elements,
             confirmParams: {
-                return_url: "https://zomato-z123.netlify.app/viewOrders",
+                return_url: "https://zomato-z123.netlify.app/vieworders",
                 // receipt_email: email,
             }
         }) ;
