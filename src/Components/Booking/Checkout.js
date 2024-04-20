@@ -4,9 +4,9 @@ import {loadStripe} from '@stripe/stripe-js';
 import {Elements} from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm';
 import "../../styles/checkout.css";
-import config from '../../config';
+// import config from '../../config';
 
-const stripePromise = loadStripe(config.Api_publish_key);
+const stripePromise = loadStripe('pk_test_51Nx2IESFreFK53KxacuZoVV5CPmKX1PhPk5uBGE97C4SCidxIwRMjOVhzirxTsLVIEUHoeAdPqix6m7Ak2p8nhvI00HGykImn9');
 
 const Checkout = () => {
     const [clientSecret, setClientSecret] = useState("");
